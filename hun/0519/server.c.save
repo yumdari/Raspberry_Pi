@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <string.h>
+
+#include <wiringPi.h>
+#include <wiringSerial.h>
+char device[] = "/dev/ttACM0";
+int fd;
+unsigned long baud = 9600;
+int main () {
+	char ser_buff[10] = {0};
+	int dex = 0, temp, humi, str_len;
+	char *pArry[2] = {0};
+	char *pToken;
+	printf( Raspberry Startup");
+	fflus(stdout);
+	if((fd = serialOpen(device
